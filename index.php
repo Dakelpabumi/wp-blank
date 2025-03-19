@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 
 <main>
-    <h2>Welcome to My WordPress Site</h2>
-    <p>This is the index page content.</p>
+    <div class="torii-gate">
+        <div class="cursed-energy"></div>
+        <div class="shrine-container">
+            <h1>Malevolent Shrine</h1>
+            <hr>
+            <hr>
+            <hr>
+            <p>"No escape. No mercy. Just destruction."</p>
+        </div>
+    </div>
 </main>
 
 <?php get_footer(); ?>

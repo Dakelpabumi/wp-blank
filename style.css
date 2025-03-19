@@ -8,3 +8,42 @@ License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: blank-theme, minimal, acf, wordpress-builder, responsive-design
 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.shrine-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+}
+.torii-gate {
+    top: 20%;
+    width: 100%;
+    height: auto;
+    background: url('https://cdna.artstation.com/p/assets/images/images/057/726/786/large/mohamed-mohasin-malevolent-shrine.jpg?1672480136') no-repeat center;
+    background-size: cover;
+}
+h1 {
+    font-size: 3rem;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+.cursed-energy {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,0,0,0.1) 0%, rgba(0,0,0,1) 80%);
+    animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}

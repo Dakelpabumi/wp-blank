@@ -3,6 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
     <title><?php wp_title('|', true, 'right'); ?></title>
     <?php wp_head(); ?>
 </head>
@@ -10,29 +11,28 @@
 
 <header>
     <!-- Navigation Bar -->
-    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <!-- Site Title or Logo -->
+                
                 <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
 
-                <!-- Mobile Menu Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse " id="mainNav">
+                
+                <div class="collapse navbar-collapse  " id="main-menu">
                     <?php
-                        wp_nav_menu(array(
-                            'theme_location' => 'primary', // Uses the registered menu
-                            'menu_class'     => 'navbar-nav ms-auto d-flex justify-content-evenly',
-                            'container'      => false, // Removes the default <div> wrapper
-                            'depth'          => 2, // Allows dropdowns
-                        ));
+                    wp_nav_menu(array(
+                        'theme_location' => 'primary',
+                        'container' => false,
+                        'menu_class' => '',
+                        'fallback_cb' => '__return_false',
+                        'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                        'depth' => 2,
+                        'walker' => new bootstrap_5_wp_nav_menu_walker()
+                    ));
                     ?>
                 </div>
             </div>
         </nav>
-    </div>
 </header>
